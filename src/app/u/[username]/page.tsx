@@ -78,7 +78,7 @@ export default function SendMessage() {
       toast({
         title: 'Error',
         description:
-          axiosError.response?.data.message ?? 'Failed to sent message',
+          axiosError.response?.data.message ?? 'Coming Soon',
         variant: 'destructive',
       });
     } finally {
@@ -90,6 +90,11 @@ export default function SendMessage() {
     try {
       complete('');
     } catch (error) {
+      toast({
+        title: 'Error',
+        description:'Failed to fetch message',
+        variant: 'destructive',
+      });
       console.error('Error fetching messages:', error);
       // Handle error appropriately
     }
